@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Inter:wght@300;400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Baloo Bhaijaan 2", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Noto Nastaliq Urdu", ui-serif, Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom smooth transition for dark mode */
+.dark body {
+  background-color: #0c0a09; /* stone-950 */
+}
+
+/* Custom fine-grained aesthetic scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1c1917; /* stone-900 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #800000; /* deep red matching logo */
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a29e; /* gold / warm gray */
+}
+
+/* @media print for both A4 paper and 80mm thermal receipt */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* When printing-now is active, hide all other direct children of body completely */
+  body.printing-now > *:not(#print-section) {
+    display: none !important;
+  }
+
+  /* Fallback standard printing styles if no print-section is injected */
+  body:not(.printing-now) * {
+    visibility: hidden;
+  }
+  body:not(.printing-now) #thermal-receipt-print-wrapper,
+  body:not(.printing-now) #thermal-receipt-print-wrapper * {
+    visibility: visible;
+  }
+  body:not(.printing-now) #thermal-receipt-print-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* 80mm thermal layout fallback */
+  body:not(.printing-now) #thermal-receipt-print-wrapper.print-80mm {
+    width: 80mm;
+    padding: 6mm;
+    font-size: 10px !important;
+  }
+  
+  /* A4 standard layout fallback */
+  body:not(.printing-now) #thermal-receipt-print-wrapper.print-a4 {
+    width: 210mm;
+    max-width: 100%;
+    padding: 15mm;
+    font-size: 13px !important;
+  }
+}
+

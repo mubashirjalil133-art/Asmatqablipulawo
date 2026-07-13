@@ -1,0 +1,8 @@
+{
+  "name": "Asmat Kabuli Pulao & Hotel",
+  "description": "Premium bilingual (English & Urdu) website for Asmat Kabuli Pulao & Hotel, located on Main G.T. Road, Sarai Naurang, Khyber Pakhtunkhwa, Pakistan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
