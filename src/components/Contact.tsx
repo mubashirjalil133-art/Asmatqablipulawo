@@ -27,11 +27,7 @@ export default function Contact({ language }: ContactProps) {
       try {
         const parsed = JSON.parse(saved);
         if (parsed.phone) {
-          if (parsed.phone.includes("1234567") || parsed.phone.includes("123-4567") || parsed.phone.includes("+92 300") || parsed.phone === "0302-8073204") {
-            setPhone("0302-8073204 / 0304-9767017");
-          } else {
-            setPhone(parsed.phone);
-          }
+          setPhone(parsed.phone);
         }
         if (parsed.addressEn) setAddressEn(parsed.addressEn);
         if (parsed.addressUr) setAddressUr(parsed.addressUr);

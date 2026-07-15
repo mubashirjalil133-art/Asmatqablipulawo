@@ -11,7 +11,7 @@ export function printReceipt(order: Order, format: '80mm' | 'a4', language: Lang
   // Load active restaurant settings from localStorage or fallback
   const savedSettings = localStorage.getItem('asmat_rms_settings');
   let settings = {
-    logo: "/logo.png",
+    logo: "/logo.png?v=3",
     nameEn: "ASMAT HOTEL & RESTAURANT",
     nameUr: "عصمت ہوٹل اینڈ ریسٹورنٹ",
     sloganEn: "KABULI PULAO & HOTEL",
@@ -55,7 +55,7 @@ export function printReceipt(order: Order, format: '80mm' | 'a4', language: Lang
   const thermalHTML = `
     <div class="thermal-receipt-container">
       <div class="center-align">
-        <img class="receipt-logo" src="${settings.logo || '/logo.png'}" alt="Logo" />
+        <img class="receipt-logo" src="${settings.logo || '/logo.png?v=3'}" alt="Logo" />
         <h1 class="restaurant-name-en">${settings.nameEn}</h1>
         <h2 class="restaurant-name-ur font-urdu">${settings.nameUr}</h2>
         <p class="slogan">${isUrdu ? settings.sloganUr : settings.sloganEn}</p>
@@ -175,7 +175,7 @@ export function printReceipt(order: Order, format: '80mm' | 'a4', language: Lang
     <div class="a4-receipt-container">
       <div class="invoice-header">
         <div class="header-left">
-          <img class="a4-logo" src="${settings.logo || '/logo.png'}" alt="Logo" />
+          <img class="a4-logo" src="${settings.logo || '/logo.png?v=3'}" alt="Logo" />
           <div>
             <h1 class="a4-title-en">${settings.nameEn}</h1>
             <h2 class="a4-title-ur font-urdu">${settings.nameUr}</h2>

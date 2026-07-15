@@ -16,7 +16,7 @@ interface HeroProps {
 export default function Hero({ language }: HeroProps) {
   const isUrdu = language === 'ur';
 
-  const [logoSrc, setLogoSrc] = useState("/logo.png");
+  const [logoSrc, setLogoSrc] = useState("/logo.png?v=3");
   const [nameEn, setNameEn] = useState("Asmat Hotel & Restaurant");
   const [nameUr, setNameUr] = useState("عصمت ہوٹل اینڈ ریسٹورنٹ");
   const [sloganEn, setSloganEn] = useState("The home of authentic traditional dining and premium hospitality on Main G.T. Road, Sarai Naurang, KP.");
@@ -34,7 +34,7 @@ export default function Hero({ language }: HeroProps) {
         if (parsed.logo) {
           setLogoSrc(parsed.logo);
         } else {
-          setLogoSrc("/logo.png");
+          setLogoSrc("/logo.png?v=3");
         }
         // Use slogan or description for the subtitle
         if (parsed.sloganEn) setSloganEn(parsed.sloganEn);
@@ -55,7 +55,7 @@ export default function Hero({ language }: HeroProps) {
       setSloganUr("سرائے نورنگ میں روایتی ذائقہ اور اعلیٰ ترین خاندانی ماحول کا امین۔");
       setAddressEn("Main G.T. Road, Sarai Naurang");
       setAddressUr("مین جی ٹی روڈ، سرائے نورنگ");
-      setLogoSrc("/logo.png");
+      setLogoSrc("/logo.png?v=3");
     }
   };
 
@@ -99,7 +99,7 @@ export default function Hero({ language }: HeroProps) {
               className="max-h-[320px] sm:max-h-[420px] w-auto max-w-full object-contain pointer-events-none rounded-full"
               referrerPolicy="no-referrer"
               onError={(e) => {
-                e.currentTarget.src = "/logo.png";
+                e.currentTarget.src = "/logo.png?v=3";
               }}
             />
           </div>

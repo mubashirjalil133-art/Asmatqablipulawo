@@ -378,12 +378,12 @@ export default function App() {
       try {
         const parsed = JSON.parse(rawSettings);
         let changed = false;
-        if (!parsed.phone || parsed.phone.includes("1234567") || parsed.phone.includes("123-4567") || parsed.phone.includes("+92 300") || parsed.phone === "0302-8073204") {
+        if (!parsed.phone || !parsed.phone.includes("0302-8073204") || !parsed.phone.includes("0304-9767017")) {
           parsed.phone = "0302-8073204 / 0304-9767017";
           changed = true;
         }
-        if (!parsed.logo || parsed.logo === "") {
-          parsed.logo = "/logo.png";
+        if (!parsed.logo || parsed.logo === "" || (parsed.logo.startsWith("/logo.png") && !parsed.logo.includes("?v=3"))) {
+          parsed.logo = "/logo.png?v=3";
           changed = true;
         }
         if (changed) {
@@ -395,7 +395,7 @@ export default function App() {
       }
     } else {
       const defaultSettings = {
-        logo: "/logo.png",
+        logo: "/logo.png?v=3",
         nameEn: "ASMAT HOTEL & RESTAURANT",
         nameUr: "عصمت ہوٹل اینڈ ریسٹورنٹ",
         sloganEn: "KABULI PULAO & HOTEL",

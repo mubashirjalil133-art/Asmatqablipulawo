@@ -12,7 +12,7 @@ interface LogoProps {
 }
 
 export default function Logo({ className = "h-12 w-12", showText = true, inverted = false }: LogoProps) {
-  const [logoSrc, setLogoSrc] = useState("/logo.png");
+  const [logoSrc, setLogoSrc] = useState("/logo.png?v=3");
   const [nameEn, setNameEn] = useState("ASMAT HOTEL & RESTAURANT");
   const [sloganEn, setSloganEn] = useState("KABULI PULAO & HOTEL");
 
@@ -26,7 +26,7 @@ export default function Logo({ className = "h-12 w-12", showText = true, inverte
         if (parsed.logo) {
           setLogoSrc(parsed.logo);
         } else {
-          setLogoSrc("/logo.png");
+          setLogoSrc("/logo.png?v=3");
         }
       } catch (e) {
         // Fallback to default
@@ -34,7 +34,7 @@ export default function Logo({ className = "h-12 w-12", showText = true, inverte
     } else {
       setNameEn("ASMAT HOTEL & RESTAURANT");
       setSloganEn("KABULI PULAO & HOTEL");
-      setLogoSrc("/logo.png");
+      setLogoSrc("/logo.png?v=3");
     }
   };
 
@@ -55,7 +55,7 @@ export default function Logo({ className = "h-12 w-12", showText = true, inverte
         referrerPolicy="no-referrer"
         onError={(e) => {
           // If custom logo fails, fallback to default
-          e.currentTarget.src = "/logo.png";
+          e.currentTarget.src = "/logo.png?v=3";
         }}
       />
 

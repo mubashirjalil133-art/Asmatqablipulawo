@@ -17,7 +17,7 @@ export default function About({ language }: AboutProps) {
   const t: Translation = translations[language];
   const isUrdu = language === 'ur';
 
-  const [logoSrc, setLogoSrc] = useState("/logo.png");
+  const [logoSrc, setLogoSrc] = useState("/logo.png?v=3");
   const [descEn, setDescEn] = useState("");
   const [descUr, setDescUr] = useState("");
 
@@ -31,13 +31,13 @@ export default function About({ language }: AboutProps) {
         if (parsed.logo) {
           setLogoSrc(parsed.logo);
         } else {
-          setLogoSrc("/logo.png");
+          setLogoSrc("/logo.png?v=3");
         }
       } catch (e) {}
     } else {
       setDescEn("");
       setDescUr("");
-      setLogoSrc("/logo.png");
+      setLogoSrc("/logo.png?v=3");
     }
   };
 
@@ -97,7 +97,7 @@ export default function About({ language }: AboutProps) {
                   className="max-h-full max-w-full object-contain pointer-events-none transition-transform duration-300 hover:scale-105 rounded-full"
                   referrerPolicy="no-referrer"
                   onError={(e) => {
-                    e.currentTarget.src = "/logo.png";
+                    e.currentTarget.src = "/logo.png?v=3";
                   }}
                 />
               </div>

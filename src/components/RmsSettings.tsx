@@ -27,7 +27,7 @@ export interface RestaurantSettings {
 }
 
 const DEFAULT_SETTINGS: RestaurantSettings = {
-  logo: "/logo.png",
+  logo: "/logo.png?v=3",
   nameEn: "ASMAT HOTEL & RESTAURANT",
   nameUr: "عصمت ہوٹل اینڈ ریسٹورنٹ",
   sloganEn: "KABULI PULAO & HOTEL",
@@ -149,7 +149,7 @@ export default function RmsSettings({ language }: RmsSettingsProps) {
             </span>
 
             <div className="relative group w-32 h-32 rounded-full border-2 border-amber-500/30 bg-white dark:bg-stone-900 overflow-hidden flex items-center justify-center p-2 shadow-lg cursor-pointer">
-              <img src={settings.logo || "/logo.png"} alt="Official Logo Preview" className="max-w-full max-h-full object-contain rounded-full" />
+              <img src={settings.logo || "/logo.png?v=3"} alt="Official Logo Preview" className="max-w-full max-h-full object-contain rounded-full" />
               <label className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center cursor-pointer transition-opacity duration-200">
                 <ImageIcon className="h-6 w-6 text-white mb-1" />
                 <span className="text-[10px] text-white font-bold">{isUrdu ? "تبدیل کریں" : "Change Logo"}</span>

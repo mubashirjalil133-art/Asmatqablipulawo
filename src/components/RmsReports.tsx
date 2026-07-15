@@ -332,7 +332,7 @@ export default function RmsReports({ language, orders, dishes }: RmsReportsProps
   const handlePrintA4Report = () => {
     const saved = localStorage.getItem('asmat_rms_settings');
     let settings = {
-      logo: "/logo.png",
+      logo: "/logo.png?v=3",
       nameEn: "ASMAT KABULI PULAO & HOTEL",
       nameUr: "عصمت ہوٹل اینڈ ریسٹورنٹ",
       sloganEn: "KABULI PULAO & HOTEL",
@@ -378,7 +378,7 @@ export default function RmsReports({ language, orders, dishes }: RmsReportsProps
         </head>
         <body>
           <div class="header">
-            <img src="${settings.logo || '/logo.png'}" style="height: 60px; width: 60px; object-fit: contain; display: block; margin: 0 auto 10px auto;" />
+            <img src="${settings.logo || '/logo.png?v=3'}" style="height: 60px; width: 60px; object-fit: contain; display: block; margin: 0 auto 10px auto;" />
             <h1 class="logo-title">${settings.nameEn.toUpperCase()}</h1>
             <p class="subtitle">${settings.addressEn}</p>
             <p class="subtitle">Contact: ${settings.phone}</p>
@@ -522,7 +522,7 @@ export default function RmsReports({ language, orders, dishes }: RmsReportsProps
   const handlePrintDailyClosingThermal = () => {
     const saved = localStorage.getItem('asmat_rms_settings');
     let settings = {
-      logo: "/logo.png",
+      logo: "/logo.png?v=3",
       nameEn: "ASMAT KABULI PULAO & HOTEL",
       nameUr: "عصمت ہوٹل اینڈ ریسٹورنٹ",
       sloganEn: "KABULI PULAO & HOTEL",
@@ -553,7 +553,7 @@ export default function RmsReports({ language, orders, dishes }: RmsReportsProps
         </head>
         <body>
           <div class="center">
-            <img src="${settings.logo || '/logo.png'}" style="height: 40px; width: 40px; object-fit: contain; display: block; margin: 0 auto 5px auto;" />
+            <img src="${settings.logo || '/logo.png?v=3'}" style="height: 40px; width: 40px; object-fit: contain; display: block; margin: 0 auto 5px auto;" />
             <div class="logo">${settings.nameEn}</div>
             <div>${settings.addressEn}</div>
             <div>Phone: ${settings.phone}</div>
